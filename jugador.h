@@ -26,7 +26,7 @@ public:
     int obtenerComodinesNormales() const;
     int obtenerComodinesMulticolor() const;
     bool obtenerComodinDorado() const;  
-    void probarCalculoPuntuacion();
+    
 };
 
 #endif // JUGADOR_H
