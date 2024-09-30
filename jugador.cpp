@@ -105,8 +105,3 @@ int Jugador::obtenerComodinesMulticolor() const {
 bool Jugador::obtenerComodinDorado() const {
     return tieneComodinDorado;
 }
-
-    int puntuacion = calcularPuntuacion();
-    cout << "Puntuación calculada: " << puntuacion << endl;
-    
-}
