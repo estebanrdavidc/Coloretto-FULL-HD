@@ -14,13 +14,11 @@ private:
     stack<Carta> mazo;
     vector<vector<Carta>> pilas;
     vector<bool> pilasHabilitadas;
-    bool ultimaRonda;
     bool rondaFinalIniciada;
     int jugadorActual;
 
     void inicializarMazo();
     void mezclarMazo();
-    bool todasPilasLlenas() const;
     bool todasPilasDeshabilitadas() const;
     bool hayPilasDisponibles() const;
     bool hayPilasParaTomar() const;
