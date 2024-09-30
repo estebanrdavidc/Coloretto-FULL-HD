@@ -106,22 +106,6 @@ bool Jugador::obtenerComodinDorado() const {
     return tieneComodinDorado;
 }
 
-void Jugador::probarCalculoPuntuacion() {
-    mano.clear();
-    comodinesNormales = 0;
-    tieneComodinDorado = false;
-    comodinesMulticolor = 0;
-
-    // probando calculo dela puntuacion
-    mano["Verde"] = 4;
-    mano["Rojo"] = 4;
-    mano["Azul"] = 3;
-    mano["Amarillo"] = 1;
-    mano["Naranja"] = 2;
-    comodinesNormales = 2;
-    tieneComodinDorado = true;
-    comodinesMulticolor = 1;
-
     int puntuacion = calcularPuntuacion();
     cout << "Puntuación calculada: " << puntuacion << endl;
     
