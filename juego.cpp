@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Juego::Juego(int numJugadores) : jugadores(numJugadores), pilas(numJugadores), pilasHabilitadas(numJugadores, true), ultimaRonda(false), rondaFinalIniciada(false), jugadorActual(0) {
+Juego::Juego(int numJugadores) : jugadores(numJugadores), pilas(numJugadores), pilasHabilitadas(numJugadores, true), rondaFinalIniciada(false), jugadorActual(0) {
     inicializarMazo();
     mezclarMazo();
 }
@@ -41,10 +41,6 @@ void Juego::mezclarMazo() {
     }
 }
 
-bool Juego::todasPilasLlenas() const {
-    return all_of(pilas.begin(), pilas.end(), 
-                       [](const vector<Carta>& pila) { return pila.size() >= 3; });
-}
 
 bool Juego::todasPilasDeshabilitadas() const {
     return all_of(pilasHabilitadas.begin(), pilasHabilitadas.end(), 
@@ -94,10 +90,10 @@ void Juego::jugarTurno() {
         Carta carta = mazo.top();
         mazo.pop();
 
-        if (mazo.size() == 16 && !rondaFinalIniciada) {
-            cout << "¡RONDA FINAL!" << endl;
+        if (mazo.size() == 16) {
+            cout << "¡RONDA FINAL!, ROBANDO OTRA CARTA" << endl;
             rondaFinalIniciada = true;
-            ultimaRonda = true;
+            mazo.pop();
         }
 
         cout << "Has robado una carta " << colorearTexto(carta.color, carta.color) << endl;
